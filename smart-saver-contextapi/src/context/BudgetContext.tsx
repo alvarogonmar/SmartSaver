@@ -1,3 +1,5 @@
+// Ponerlo en main.tsx porque tiene que rodear toda la aplicacion
+
 import { useReducer, createContext, Dispatch, ReactNode } from "react"; // createContext: es de donde se obtienen los datos
 import {
   BudgetActions,
