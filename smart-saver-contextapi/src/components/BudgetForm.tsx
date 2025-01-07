@@ -1,3 +1,7 @@
+import { useState } from "react";
+
+const [budget, setBudget] = useState(0);
+
 export default function BudgetForm() {
   return (
     <form className="space-y-5">
