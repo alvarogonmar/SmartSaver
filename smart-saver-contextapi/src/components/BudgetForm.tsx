@@ -4,7 +4,7 @@ export default function BudgetForm() {
       <div className="flex flex-col space-y-5">
         <label
           htmlFor="budget"
-          className="text-4l text-blue-600 font-bold text-center"
+          className="text-4xl text-blue-600 font-bold text-center"
         >
           Define Budget
         </label>
@@ -16,7 +16,12 @@ export default function BudgetForm() {
           name="budget"
         />
       </div>
-      <input />
+
+      <input
+        type="submit"
+        value="Define Budget"
+        className="bg-blue-600 hover:bg-blue-700 cursor-pointer w-full p-2 text-white font-black uppercase"
+      />
     </form>
   );
 }
