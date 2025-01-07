@@ -10,6 +10,7 @@ export default function BudgetForm() {
   const isValid = useMemo(() => {
     return isNaN(budget) || budget <= 0;
   }, [budget]);
+
   return (
     <form className="space-y-5">
       <div className="flex flex-col space-y-5">
