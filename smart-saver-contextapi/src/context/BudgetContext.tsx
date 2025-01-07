@@ -1,12 +1,35 @@
-import { useReducer } from "react"
-import { budgetReducer, initialState } from "../reducers/budget-reducer"
+import { useReducer, createContext, Dispatch, ReactNode } from "react"; // createContext: es de donde se obtienen los datos
+import {
+  BudgetActions,
+  budgetReducer,
+  BudgetState,
+  initialState,
+} from "../reducers/budget-reducer";
 
-export const BudgetProvider = () => { // Provider: es de donde vienen los datos
+type BudgetContextProps = {
+  state: BudgetState;
+  dispatch: Dispatch<BudgetActions>;
+};
 
-    const [state, dispatch] = useReducer(budgetReducer, initialState)
+type BudgetProviderProps = {
+  children: ReactNode;
+};
 
-    return (
+export const BudgetContext = createContext<BudgetContextProps>(null!);
 
-    )
+export const BudgetProvider = ({ children }: BudgetProviderProps) => {
+  // Provider: es de donde vienen los datos
 
-}
+  const [state, dispatch] = useReducer(budgetReducer, initialState);
+
+  return (
+    <BudgetContext.Provider
+      value={{
+        state,
+        dispatch,
+      }}
+    >
+      {children}
+    </BudgetContext.Provider>
+  );
+};
