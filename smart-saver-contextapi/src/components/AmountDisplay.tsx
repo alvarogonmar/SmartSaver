@@ -4,5 +4,10 @@ type AmountDisplayProps = {
 };
 
 export default function AmountDisplay({ label, amount }: AmountDisplayProps) {
-  return <div>AmountDisplay</div>;
+  return (
+    <p className="text-2xl text-blue-600 font-bold">
+      {label}: {""}
+      <span className="font-black text-black">{amount}</span>
+    </p>
+  );
 }
