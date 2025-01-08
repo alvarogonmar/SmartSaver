@@ -1,9 +1,9 @@
-export const categories = [
-    { id: '1', name: 'Ahorro', icon: 'ahorro' },
-    { id: '2', name: 'Comida', icon: 'comida' },
-    { id: '3', name: 'Casa', icon: 'casa' },
-    { id: '4', name: 'Gastos Varios', icon: 'gastos' },
-    { id: '5', name: 'Ocio', icon: 'ocio' },
-    { id: '6', name: 'Salud', icon: 'salud' },
-    { id: '7', name: 'Suscripciones', icon: 'suscripciones' },
-  ];
+  export const categories = [
+    { id: '1', name: 'Savings', icon: 'savings' },
+    { id: '2', name: 'Food', icon: 'food' },
+    { id: '3', name: 'Home', icon: 'home' },
+    { id: '4', name: 'Miscellaneous expenses', icon: 'miscellaneous' },
+    { id: '5', name: 'Entertainment', icon: 'entertainment' },
+    { id: '6', name: 'Health', icon: 'health' },
+    { id: '7', name: 'Subscriptions', icon: 'subscriptions' },
+];
