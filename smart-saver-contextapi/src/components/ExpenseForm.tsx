@@ -17,6 +17,18 @@ export default function ExpenseForm() {
           name="expenseName"
         />
       </div>
+      <div className="flex flex-col gap-2">
+        <label htmlFor="amount" className="text-xl font-bold ">
+          Amount:
+        </label>
+        <input
+          type="number"
+          id="amount"
+          placeholder="Enter the amount"
+          className="bg=slate-100 p-2"
+          name="amount"
+        />
+      </div>
     </form>
   );
 }
