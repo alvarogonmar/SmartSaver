@@ -1,4 +1,6 @@
 import { Expense } from "../types";
+import { formatDate } from "../helpers";
+import AmountDisplay from "./AmountDisplay";
 
 type ExpenseDetailProps = {
   expense: Expense;
@@ -11,8 +13,12 @@ export default function ExpenseDetail({ expense }: ExpenseDetailProps) {
 
       <div>
         <p>{expense.expenseName}</p>
-        <p className="text-slate-600 text-sm">{expense.date?.toString()}</p>
+        <p className="text-slate-600 text-sm">
+          {formatDate(expense.date!.toString())}
+        </p>
       </div>
+
+      <AmountDisplay amount={expense.amount} />
     </div>
   );
 }
