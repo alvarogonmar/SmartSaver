@@ -19,6 +19,14 @@ export const initialState : BudgetState ={
     expenses: []
 }
 
+const createExpense = (draftExpense: DraftExpense) : Expense => {
+    return {
+        ...draftExpense,
+        id: uuidv4()
+    }
+
+}
+
 export const budgetReducer = (
         state: BudgetState = initialState,
         action: BudgetActions
@@ -45,9 +53,11 @@ export const budgetReducer = (
     }
 
     if(action.type === "add-expense") {
+
+        const expense = createExpense(action.payload.expense)
         return {
             ...state,
-            expenses: [...state.expenses, action.payload.expense]
+            expenses: [...state.expenses, expense]
         }
     }
 
