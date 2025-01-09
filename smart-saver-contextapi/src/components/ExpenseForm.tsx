@@ -4,6 +4,7 @@ import { categories } from "../data/categories";
 import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
+import ErrorMessage from "./ErrorMessage";
 
 export default function ExpenseForm() {
   const [expense, setExpense] = useState<DraftExpense>({
@@ -49,6 +50,8 @@ export default function ExpenseForm() {
       <legend className="uppercase text-center text-2xl font-black border-b-4 border-blue-500 py-2">
         New Expense
       </legend>
+
+      {error && <ErrorMessage>{error}</ErrorMessage>}
 
       <div className="flex flex-col gap-2">
         <label htmlFor="expenseName" className="text-xl font-bold ">
