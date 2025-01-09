@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { DraftExpense } from "../types";
+import type { DraftExpense, Value } from "../types";
 import { categories } from "../data/categories";
 import DatePicker from "react-date-picker";
 import "react-date-picker/dist/DatePicker.css";
@@ -13,6 +13,12 @@ export default function ExpenseForm() {
     date: new Date(),
   });
 
+  const handleChangeDate = (value: Value) => {
+    setExpense({
+      ...expense,
+      date: value,
+    });
+  };
   return (
     <form className="space-y-5">
       <legend className="uppercase text-center text-2xl font-black border-b-4 border-blue-500 py-2">
@@ -29,6 +35,7 @@ export default function ExpenseForm() {
           placeholder="Enter your new expense"
           className="bg=slate-100 p-2"
           name="expenseName"
+          value={expense.expenseName}
         />
       </div>
       <div className="flex flex-col gap-2">
@@ -41,13 +48,19 @@ export default function ExpenseForm() {
           placeholder="Enter the amount"
           className="bg=slate-100 p-2"
           name="amount"
+          value={expense.amount}
         />
       </div>
       <div className="flex flex-col gap-2">
         <label htmlFor="category" className="text-xl font-bold ">
           Category:
         </label>
-        <select id="category" className="bg=slate-100 p-2" name="category">
+        <select
+          id="category"
+          className="bg=slate-100 p-2"
+          name="category"
+          value={expense.category}
+        >
           <option value=""> -- Choose -- </option>
           {categories.map((category) => (
             <option key={category.id} value={category.id}>
@@ -60,7 +73,11 @@ export default function ExpenseForm() {
         <label htmlFor="amount" className="text-xl font-bold ">
           Date:
         </label>
-        <DatePicker className="bg-slate-100 p-2 border-0" />
+        <DatePicker
+          className="bg-slate-100 p-2 border-0"
+          value={expense.date}
+          onChange={handleChangeDate}
+        />
       </div>
 
       <input
