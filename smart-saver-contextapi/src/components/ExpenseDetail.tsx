@@ -5,5 +5,14 @@ type ExpenseDetailProps = {
 };
 
 export default function ExpenseDetail({ expense }: ExpenseDetailProps) {
-  return <div>ExpenseDetail</div>;
+  return (
+    <div className="bg-white shadowlg p-10 w-full border-b border-gray-200">
+      <div></div>
+
+      <div>
+        <p>{expense.expenseName}</p>
+        <p className="text-slate-600 text-sm">{expense.date?.toString()}</p>
+      </div>
+    </div>
+  );
 }
