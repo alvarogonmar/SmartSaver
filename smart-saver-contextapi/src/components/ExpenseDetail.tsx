@@ -1,8 +1,16 @@
 import { Expense } from "../types";
+import {
+  LeadingActions,
+  SwipeableList,
+  SwipeableListItem,
+  SwipeAction,
+  TrailingActions,
+} from "react-swipeable-list";
 import { formatDate } from "../helpers";
 import AmountDisplay from "./AmountDisplay";
 import { useMemo } from "react";
 import { categories } from "../data/categories";
+import "react-swipeable-list/dist/styles.css";
 
 type ExpenseDetailProps = {
   expense: Expense;
