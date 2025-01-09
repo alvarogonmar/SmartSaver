@@ -64,7 +64,7 @@ export default function ExpenseForm() {
           type="text"
           id="expenseName"
           placeholder="Enter your new expense"
-          className="bg=slate-100 p-2"
+          className="bg-slate-100 p-2"
           name="expenseName"
           value={expense.expenseName}
           onChange={handleChange}
@@ -78,7 +78,7 @@ export default function ExpenseForm() {
           type="number"
           id="amount"
           placeholder="Enter the amount"
-          className="bg=slate-100 p-2"
+          className="bg-slate-100 p-2"
           name="amount"
           value={expense.amount}
           onChange={handleChange}
@@ -90,7 +90,7 @@ export default function ExpenseForm() {
         </label>
         <select
           id="category"
-          className="bg=slate-100 p-2"
+          className="bg-slate-100 p-2"
           name="category"
           value={expense.category}
           onChange={handleChange}
