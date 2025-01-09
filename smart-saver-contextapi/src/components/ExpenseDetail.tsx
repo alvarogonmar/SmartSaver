@@ -24,7 +24,7 @@ export default function ExpenseDetail({ expense }: ExpenseDetailProps) {
         />
       </div>
 
-      <div>
+      <div className="flex-1 space-y-2">
         <p className="text-sm font-bold uppercase text-slate-500">
           {categoryInfo.name}
         </p>
