@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import type { DraftExpense, Value } from "../types";
 import { categories } from "../data/categories";
 import DatePicker from "react-date-picker";
@@ -12,6 +12,8 @@ export default function ExpenseForm() {
     category: "",
     date: new Date(),
   });
+
+  const [error, setError] = useState("");
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
@@ -30,8 +32,20 @@ export default function ExpenseForm() {
       date: value,
     });
   };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // validar
+    if (Object.values(expense).includes("")) {
+      setError("All Fields are Required");
+      return;
+    }
+
+    console.log("all correct");
+  };
   return (
-    <form className="space-y-5">
+    <form className="space-y-5" onSubmit={handleSubmit}>
       <legend className="uppercase text-center text-2xl font-black border-b-4 border-blue-500 py-2">
         New Expense
       </legend>
