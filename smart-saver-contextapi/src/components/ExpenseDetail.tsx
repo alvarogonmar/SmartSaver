@@ -16,7 +16,13 @@ export default function ExpenseDetail({ expense }: ExpenseDetailProps) {
 
   return (
     <div className="bg-white shadowlg p-10 w-full border-b border-gray-200 flex gap-5 items-center">
-      <div></div>
+      <div>
+        <img
+          src={`/icono_${categoryInfo.icon}.svg`}
+          alt="expense icon"
+          className="w-20"
+        />
+      </div>
 
       <div>
         <p className="text-sm font-bold uppercase text-slate-500">
