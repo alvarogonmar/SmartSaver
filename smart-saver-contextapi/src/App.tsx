@@ -34,6 +34,35 @@ function App() {
           <ExpenseModal />
         </main>
       )}
+
+      <footer className="bg-blue-600 py-5 text-center">
+        <p className="text-sm mb-3 font-black">Made by: Alvaro Gonzalez</p>
+        <div className="flex justify-center gap-5">
+          <a
+            href="https://github.com/alvarogonmar"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/733/733553.png"
+              alt="GitHub"
+              className="w-6 h-6 bg-black shadow-lg rounded"
+            />
+          </a>
+
+          <a
+            href="https://linkedin.com/in/alvarogonmar0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+              alt="LinkedIn"
+              className="w-6 h-6 bg-white rounded"
+            />
+          </a>
+        </div>
+      </footer>
     </>
   );
 }
