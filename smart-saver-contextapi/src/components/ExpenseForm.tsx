@@ -16,6 +16,7 @@ export default function ExpenseForm() {
   });
 
   const [error, setError] = useState("");
+  const [previusAmount, setPreviousAmount] = useState(0);
   const { dispatch, state, remainingBudget } = useBudget();
 
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function ExpenseForm() {
         (currentExpense) => currentExpense.id === state.editingId
       )[0];
       setExpense(editingExpense);
+      setPreviousAmount(editingExpense.amount);
     }
   }, [state.editingId]);
 
@@ -55,7 +57,7 @@ export default function ExpenseForm() {
     }
 
     // Validar que no se pase del presupuesto
-    if (expense.amount > remainingBudget) {
+    if (expense.amount - previusAmount > remainingBudget) {
       setError("Over budget!");
       return;
     }
@@ -69,6 +71,14 @@ export default function ExpenseForm() {
     } else {
       dispatch({ type: "add-expense", payload: { expense } });
     }
+
+    setExpense({
+      amount: 0,
+      expenseName: "",
+      category: "",
+      date: new Date(),
+    });
+    setPreviousAmount(0);
   };
   return (
     <form className="space-y-5" onSubmit={handleSubmit}>
