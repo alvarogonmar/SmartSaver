@@ -16,8 +16,9 @@ SmartSaver is a web application designed to help users manage their budgets and 
 - **Frontend**: React, TypeScript
 - **Styling**: Tailwind CSS
 - **State Management**: React useReducer, useMemo, Context API
-- **Icons**: Heroicons
 - **Build Tool**: Vite
+- **Date Handling**: `react-date-picker`, `react-calendar`
+- **Graphical Representation**: `react-circular-progressbar`
 
 ## Usage
 
