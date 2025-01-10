@@ -41,3 +41,5 @@ SmartSaver is a web application designed to help users manage their budgets and 
 
 4. **Warnings**:
    - Warnings will be displayed for high expenses or budget overages.
+
+Check out the application [here](https://smartsaverr.netlify.app/).
