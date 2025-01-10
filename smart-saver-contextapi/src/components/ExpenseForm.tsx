@@ -68,7 +68,7 @@ export default function ExpenseForm() {
   return (
     <form className="space-y-5" onSubmit={handleSubmit}>
       <legend className="uppercase text-center text-2xl font-black border-b-4 border-blue-500 py-2">
-        New Expense
+        {state.editingId ? "Editing Expense" : "New Expense"}
       </legend>
 
       {error && <ErrorMessage>{error}</ErrorMessage>}
@@ -134,7 +134,7 @@ export default function ExpenseForm() {
       <input
         type="submit"
         className="bg-blue-600 cursor-pointer w-full p-2 text-white uppercase font-bold rounded-lg"
-        value={"Submit Expense"}
+        value={state.editingId ? "Save Changes" : "Submit Expense"}
       />
     </form>
   );
