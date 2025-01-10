@@ -26,7 +26,7 @@ export default function BudgetTracker() {
           type="button"
           className="bg-pink-600 w-full p-2 text-white uppercase font-bold rounded-lg"
         >
-          Reset App
+          Restart App
         </button>
 
         <AmountDisplay label="Budget" amount={state.budget} />
