@@ -104,5 +104,13 @@ export const budgetReducer = (
         }
     }
 
+    if(action.type === "restart-app") {
+        return {
+            ...state,
+            budget: 0,
+            expenses: []
+        }
+    }
+
     return state
 }
