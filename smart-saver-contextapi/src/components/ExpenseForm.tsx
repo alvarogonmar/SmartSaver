@@ -16,7 +16,7 @@ export default function ExpenseForm() {
   });
 
   const [error, setError] = useState("");
-  const { dispatch, state } = useBudget();
+  const { dispatch, state, remainingBudget } = useBudget();
 
   useEffect(() => {
     if (state.editingId) {
@@ -54,6 +54,11 @@ export default function ExpenseForm() {
       return;
     }
 
+    // Validar que no se pase del presupuesto
+    if (expense.amount > remainingBudget) {
+      setError("Over budget!");
+      return;
+    }
     // Agregar o actualizar  nuevo gasto
 
     if (state.editingId) {
